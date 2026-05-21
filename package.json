@@ -1,6 +1,6 @@
 {
 	"name": "bibliograph-storage-meadow",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Bibliograph storage provider backed by Meadow DAL. Supports SQLite, PostgreSQL, MySQL, MSSQL, and other Meadow providers.",
 	"main": "source/Bibliograph-Storage-Meadow.js",
 	"scripts": {
