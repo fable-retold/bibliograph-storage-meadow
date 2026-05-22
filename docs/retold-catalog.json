@@ -1,57 +1,188 @@
 {
-	"Generated": "2026-05-21T17:22:09.570Z",
+	"Generated": "2026-05-22T05:38:49.994Z",
+	"Mode": "module",
 	"GitHubOrg": "stevenvelozo",
 	"DefaultBranch": "master",
-	"Groups": [
-		{
-			"Name": "Dist",
-			"Key": "dist",
-			"Description": "",
-			"Modules": [
-				{
-					"Name": "indoctrinate_content_staging",
-					"Repo": "indoctrinate_content_staging",
-					"Group": "dist",
-					"Branch": "master",
-					"HasDocs": false,
-					"HasCover": false,
-					"Sidebar": [],
-					"DocFiles": []
-				}
-			]
-		},
-		{
-			"Name": "Docs",
-			"Key": "docs",
-			"Description": "",
-			"Modules": [
-				{
-					"Name": "api",
-					"Repo": "api",
-					"Group": "docs",
-					"Branch": "master",
-					"HasDocs": true,
-					"HasCover": false,
-					"Sidebar": [],
-					"DocFiles": [
-						"api/exists.md",
-						"api/initialize.md",
-						"api/persistDelete.md",
-						"api/persistRecord.md",
-						"api/persistRecordDelta.md",
-						"api/persistRecordMetadata.md",
-						"api/read.md",
-						"api/readRecordDelta.md",
-						"api/readRecordKeys.md",
-						"api/readRecordKeysByTimestamp.md",
-						"api/readRecordMetadata.md",
-						"api/reference.md",
-						"api/sourceCreate.md",
-						"api/sourceExists.md",
-						"api/stampRecordTimestamp.md"
-					]
-				}
-			]
-		}
-	]
+	"Module": {
+		"Name": "bibliograph-storage-meadow",
+		"Repo": "bibliograph-storage-meadow",
+		"Group": "",
+		"Branch": "master",
+		"HasDocs": true,
+		"HasCover": true,
+		"Sidebar": [
+			{
+				"Title": "**Getting Started**",
+				"Children": [
+					{
+						"Title": "Overview",
+						"Path": "README.md"
+					},
+					{
+						"Title": "Quickstart",
+						"Path": "quickstart.md"
+					}
+				]
+			},
+			{
+				"Title": "**Concepts**",
+				"Children": [
+					{
+						"Title": "Architecture",
+						"Path": "architecture.md"
+					},
+					{
+						"Title": "Database Schema",
+						"Path": "schema.md"
+					}
+				]
+			},
+			{
+				"Title": "**API Reference**",
+				"Children": [
+					{
+						"Title": "Full Reference",
+						"Path": "api/reference.md"
+					},
+					{
+						"Title": "Lifecycle",
+						"Children": []
+					},
+					{
+						"Title": "initialize()",
+						"Path": "api/initialize.md"
+					},
+					{
+						"Title": "Source Operations",
+						"Children": []
+					},
+					{
+						"Title": "sourceExists()",
+						"Path": "api/sourceExists.md"
+					},
+					{
+						"Title": "sourceCreate()",
+						"Path": "api/sourceCreate.md"
+					},
+					{
+						"Title": "Record Operations",
+						"Children": []
+					},
+					{
+						"Title": "exists()",
+						"Path": "api/exists.md"
+					},
+					{
+						"Title": "read()",
+						"Path": "api/read.md"
+					},
+					{
+						"Title": "persistRecord()",
+						"Path": "api/persistRecord.md"
+					},
+					{
+						"Title": "persistDelete()",
+						"Path": "api/persistDelete.md"
+					},
+					{
+						"Title": "Metadata",
+						"Children": []
+					},
+					{
+						"Title": "readRecordMetadata()",
+						"Path": "api/readRecordMetadata.md"
+					},
+					{
+						"Title": "persistRecordMetadata()",
+						"Path": "api/persistRecordMetadata.md"
+					},
+					{
+						"Title": "Timestamps",
+						"Children": []
+					},
+					{
+						"Title": "stampRecordTimestamp()",
+						"Path": "api/stampRecordTimestamp.md"
+					},
+					{
+						"Title": "Deltas",
+						"Children": []
+					},
+					{
+						"Title": "readRecordDelta()",
+						"Path": "api/readRecordDelta.md"
+					},
+					{
+						"Title": "persistRecordDelta()",
+						"Path": "api/persistRecordDelta.md"
+					},
+					{
+						"Title": "Key Enumeration",
+						"Children": []
+					},
+					{
+						"Title": "readRecordKeys()",
+						"Path": "api/readRecordKeys.md"
+					},
+					{
+						"Title": "readRecordKeysByTimestamp()",
+						"Path": "api/readRecordKeysByTimestamp.md"
+					}
+				]
+			},
+			{
+				"Title": "**Ecosystem**",
+				"Children": [
+					{
+						"Title": "Bibliograph",
+						"Path": "https://github.com/stevenvelozo/bibliograph"
+					},
+					{
+						"Title": "Meadow",
+						"Path": "https://github.com/stevenvelozo/meadow"
+					},
+					{
+						"Title": "Fable",
+						"Path": "https://github.com/stevenvelozo/fable"
+					},
+					{
+						"Title": "Pict",
+						"Path": "https://github.com/stevenvelozo/pict"
+					}
+				]
+			}
+		],
+		"DocFiles": [
+			".nojekyll",
+			"README.md",
+			"_brand.json",
+			"_cover.md",
+			"_sidebar.md",
+			"_topbar.md",
+			"_version.json",
+			"api/exists.md",
+			"api/initialize.md",
+			"api/persistDelete.md",
+			"api/persistRecord.md",
+			"api/persistRecordDelta.md",
+			"api/persistRecordMetadata.md",
+			"api/read.md",
+			"api/readRecordDelta.md",
+			"api/readRecordKeys.md",
+			"api/readRecordKeysByTimestamp.md",
+			"api/readRecordMetadata.md",
+			"api/reference.md",
+			"api/sourceCreate.md",
+			"api/sourceExists.md",
+			"api/stampRecordTimestamp.md",
+			"api.md",
+			"architecture.md",
+			"index.html",
+			"quickstart.md",
+			"retold-catalog.json",
+			"retold-keyword-index.json",
+			"schema.md"
+		]
+	},
+	"Groups": []
 }
