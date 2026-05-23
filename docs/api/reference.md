@@ -38,50 +38,50 @@ The constructor accepts:
 
 | Method | Description |
 |--------|-------------|
-| [`initialize(fCallback)`](api/initialize.md) | Create Meadow entities and ensure tables exist |
+| [`initialize(fCallback)`](initialize.md) | Create Meadow entities and ensure tables exist |
 
 ### Source Management
 
 | Method | Description |
 |--------|-------------|
-| [`sourceExists(pSourceHash, fCallback)`](api/sourceExists.md) | Check whether a source is registered |
-| [`sourceCreate(pSourceHash, fCallback)`](api/sourceCreate.md) | Register a new data source |
+| [`sourceExists(pSourceHash, fCallback)`](sourceExists.md) | Check whether a source is registered |
+| [`sourceCreate(pSourceHash, fCallback)`](sourceCreate.md) | Register a new data source |
 
 ### Record Operations
 
 | Method | Description |
 |--------|-------------|
-| [`exists(pSourceHash, pRecordGUID, fCallback)`](api/exists.md) | Check whether a record exists |
-| [`read(pSourceHash, pRecordGUID, fCallback)`](api/read.md) | Read and parse a record's data |
-| [`persistRecord(pSourceHash, pRecordGUID, pRecordJSONString, fCallback)`](api/persistRecord.md) | Create or update a record (upsert) |
-| [`persistDelete(pSourceHash, pRecordGUID, fCallback)`](api/persistDelete.md) | Soft-delete a record |
+| [`exists(pSourceHash, pRecordGUID, fCallback)`](exists.md) | Check whether a record exists |
+| [`read(pSourceHash, pRecordGUID, fCallback)`](read.md) | Read and parse a record's data |
+| [`persistRecord(pSourceHash, pRecordGUID, pRecordJSONString, fCallback)`](persistRecord.md) | Create or update a record (upsert) |
+| [`persistDelete(pSourceHash, pRecordGUID, fCallback)`](persistDelete.md) | Soft-delete a record |
 
 ### Metadata Operations
 
 | Method | Description |
 |--------|-------------|
-| [`readRecordMetadata(pSourceHash, pRecordGUID, fCallback)`](api/readRecordMetadata.md) | Read a record's metadata |
-| [`persistRecordMetadata(pSourceHash, pRecordGUID, pMetadata, fCallback)`](api/persistRecordMetadata.md) | Create or update a record's metadata (upsert) |
+| [`readRecordMetadata(pSourceHash, pRecordGUID, fCallback)`](readRecordMetadata.md) | Read a record's metadata |
+| [`persistRecordMetadata(pSourceHash, pRecordGUID, pMetadata, fCallback)`](persistRecordMetadata.md) | Create or update a record's metadata (upsert) |
 
 ### Timestamp Operations
 
 | Method | Description |
 |--------|-------------|
-| [`stampRecordTimestamp(pSourceHash, pRecordGUID, fCallback)`](api/stampRecordTimestamp.md) | Update a record's timestamp to now |
+| [`stampRecordTimestamp(pSourceHash, pRecordGUID, fCallback)`](stampRecordTimestamp.md) | Update a record's timestamp to now |
 
 ### Delta Operations
 
 | Method | Description |
 |--------|-------------|
-| [`readRecordDelta(pSourceHash, pRecordGUID, fCallback)`](api/readRecordDelta.md) | Read change history for a record |
-| [`persistRecordDelta(pSourceHash, pRecordMetadata, pDeltaContainer, fCallback)`](api/persistRecordDelta.md) | Create or update change history (upsert) |
+| [`readRecordDelta(pSourceHash, pRecordGUID, fCallback)`](readRecordDelta.md) | Read change history for a record |
+| [`persistRecordDelta(pSourceHash, pRecordMetadata, pDeltaContainer, fCallback)`](persistRecordDelta.md) | Create or update change history (upsert) |
 
 ### Key Enumeration
 
 | Method | Description |
 |--------|-------------|
-| [`readRecordKeys(pSourceHash, fCallback)`](api/readRecordKeys.md) | List all record GUIDs for a source |
-| [`readRecordKeysByTimestamp(pSourceHash, pFromTimestamp, pToTimestamp, fCallback)`](api/readRecordKeysByTimestamp.md) | List record GUIDs within a time range |
+| [`readRecordKeys(pSourceHash, fCallback)`](readRecordKeys.md) | List all record GUIDs for a source |
+| [`readRecordKeysByTimestamp(pSourceHash, pFromTimestamp, pToTimestamp, fCallback)`](readRecordKeysByTimestamp.md) | List record GUIDs within a time range |
 
 ### Inherited Methods
 
