@@ -11,14 +11,14 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/stevenvelozo/bibliograph-storage-meadow.git"
+		"url": "git+https://github.com/fable-retold/bibliograph-storage-meadow.git"
 	},
 	"author": "steven velozo <steven@velozo.com>",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/stevenvelozo/bibliograph-storage-meadow/issues"
+		"url": "https://github.com/fable-retold/bibliograph-storage-meadow/issues"
 	},
-	"homepage": "https://github.com/stevenvelozo/bibliograph-storage-meadow#readme",
+	"homepage": "https://github.com/fable-retold/bibliograph-storage-meadow#readme",
 	"devDependencies": {
 		"pict-docuserve": "^1.3.3",
 		"quackage": "^1.2.4"

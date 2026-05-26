@@ -135,19 +135,19 @@
 				"Children": [
 					{
 						"Title": "Bibliograph",
-						"Path": "https://github.com/stevenvelozo/bibliograph"
+						"Path": "https://github.com/fable-retold/bibliograph"
 					},
 					{
 						"Title": "Meadow",
-						"Path": "https://github.com/stevenvelozo/meadow"
+						"Path": "https://github.com/fable-retold/meadow"
 					},
 					{
 						"Title": "Fable",
-						"Path": "https://github.com/stevenvelozo/fable"
+						"Path": "https://github.com/fable-retold/fable"
 					},
 					{
 						"Title": "Pict",
-						"Path": "https://github.com/stevenvelozo/pict"
+						"Path": "https://github.com/fable-retold/pict"
 					}
 				]
 			}

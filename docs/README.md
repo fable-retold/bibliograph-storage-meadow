@@ -89,10 +89,10 @@ The storage provider manages three database tables:
 
 | Module | Purpose |
 |--------|---------|
-| [bibliograph](https://github.com/stevenvelozo/bibliograph) | Record management and deduplication framework |
-| [meadow](https://github.com/stevenvelozo/meadow) | Data access layer and ORM |
-| [fable](https://github.com/stevenvelozo/fable) | Application framework and service manager |
-| [pict](https://github.com/stevenvelozo/pict) | MVC tools and application lifecycle |
-| [meadow-connection-sqlite](https://github.com/stevenvelozo/meadow-connection-sqlite) | SQLite connector (default) |
-| [meadow-connection-mysql](https://github.com/stevenvelozo/meadow-connection-mysql) | MySQL connector |
-| [meadow-connection-postgresql](https://github.com/stevenvelozo/meadow-connection-postgresql) | PostgreSQL connector |
+| [bibliograph](https://github.com/fable-retold/bibliograph) | Record management and deduplication framework |
+| [meadow](https://github.com/fable-retold/meadow) | Data access layer and ORM |
+| [fable](https://github.com/fable-retold/fable) | Application framework and service manager |
+| [pict](https://github.com/fable-retold/pict) | MVC tools and application lifecycle |
+| [meadow-connection-sqlite](https://github.com/fable-retold/meadow-connection-sqlite) | SQLite connector (default) |
+| [meadow-connection-mysql](https://github.com/fable-retold/meadow-connection-mysql) | MySQL connector |
+| [meadow-connection-postgresql](https://github.com/fable-retold/meadow-connection-postgresql) | PostgreSQL connector |

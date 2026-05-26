@@ -1,6 +1,6 @@
 # bibliograph-storage-meadow
 
-> **[&#9654; Read the Bibliograph-Storage-Meadow Documentation](https://stevenvelozo.github.io/bibliograph-storage-meadow/)** &mdash; interactive docs with the full API reference.
+> **[&#9654; Read the Bibliograph-Storage-Meadow Documentation](https://fable-retold.github.io/bibliograph-storage-meadow/)** &mdash; interactive docs with the full API reference.
 
 Meadow DAL-backed storage provider for Bibliograph. Enables Bibliograph to persist records, metadata, and change deltas across any Meadow-supported database backend.
 
@@ -152,13 +152,13 @@ npm run coverage
 
 ## Related Packages
 
-- [bibliograph](https://github.com/stevenvelozo/bibliograph) -- Record management and deduplication framework
-- [meadow](https://github.com/stevenvelozo/meadow) -- Data access layer and ORM
-- [fable](https://github.com/stevenvelozo/fable) -- Application framework and service manager
-- [meadow-connection-sqlite](https://github.com/stevenvelozo/meadow-connection-sqlite) -- SQLite connector (default)
-- [meadow-connection-mysql](https://github.com/stevenvelozo/meadow-connection-mysql) -- MySQL connector
-- [meadow-connection-postgresql](https://github.com/stevenvelozo/meadow-connection-postgresql) -- PostgreSQL connector
-- [meadow-connection-mssql](https://github.com/stevenvelozo/meadow-connection-mssql) -- MSSQL connector
+- [bibliograph](https://github.com/fable-retold/bibliograph) -- Record management and deduplication framework
+- [meadow](https://github.com/fable-retold/meadow) -- Data access layer and ORM
+- [fable](https://github.com/fable-retold/fable) -- Application framework and service manager
+- [meadow-connection-sqlite](https://github.com/fable-retold/meadow-connection-sqlite) -- SQLite connector (default)
+- [meadow-connection-mysql](https://github.com/fable-retold/meadow-connection-mysql) -- MySQL connector
+- [meadow-connection-postgresql](https://github.com/fable-retold/meadow-connection-postgresql) -- PostgreSQL connector
+- [meadow-connection-mssql](https://github.com/fable-retold/meadow-connection-mssql) -- MSSQL connector
 
 ## License
 

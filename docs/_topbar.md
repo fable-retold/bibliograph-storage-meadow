@@ -2,4 +2,4 @@
 - [Quickstart](quickstart.md)
 - [Architecture](architecture.md)
 - [API Reference](api/reference.md)
-- [GitHub](https://github.com/stevenvelozo/bibliograph-storage-meadow)
+- [GitHub](https://github.com/fable-retold/bibliograph-storage-meadow)
