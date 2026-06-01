@@ -4,7 +4,7 @@
 
 Meadow DAL-backed storage provider for Bibliograph. Enables Bibliograph to persist records, metadata, and change deltas across any Meadow-supported database backend.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[MIT License](LICENSE)
 
 ## Features
 
