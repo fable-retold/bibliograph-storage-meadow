@@ -1,6 +1,6 @@
 # bibliograph-storage-meadow
 
-> **[&#9654; Read the Bibliograph-Storage-Meadow Documentation](https://fable-retold.github.io/bibliograph-storage-meadow/)** &mdash; interactive docs with the full API reference.
+> **[Read the Bibliograph-Storage-Meadow Documentation](https://fable-retold.github.io/bibliograph-storage-meadow/)** - interactive docs with the full API reference.
 
 Meadow DAL-backed storage provider for Bibliograph. Enables Bibliograph to persist records, metadata, and change deltas across any Meadow-supported database backend.
 
