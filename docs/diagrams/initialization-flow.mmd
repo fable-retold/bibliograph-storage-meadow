@@ -1,0 +1,22 @@
+sequenceDiagram
+	participant App as Application
+	participant BSM as BibliographStorageMeadow
+	participant Meadow as Meadow
+	participant DB as Database
+
+	App->>BSM: initialize(callback)
+	BSM->>Meadow: new Meadow('BibliographSource')
+	BSM->>Meadow: new Meadow('BibliographRecord')
+	BSM->>Meadow: new Meadow('BibliographDelta')
+	Note over BSM: Set provider, schema, defaults
+
+	alt SQLite Provider
+		BSM->>DB: db.exec(CREATE TABLE BibliographSource)
+		BSM->>DB: db.exec(CREATE TABLE BibliographRecord)
+		BSM->>DB: db.exec(CREATE TABLE BibliographDelta)
+	else Other Provider
+		Note over BSM: Skip -- tables must already exist
+	end
+
+	BSM->>BSM: Initialized = true
+	BSM-->>App: callback()

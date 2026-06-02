@@ -1,0 +1,28 @@
+graph TB
+	subgraph Application
+		APP[Application Code]
+		BIB[Bibliograph]
+	end
+	subgraph Storage Layer
+		BSM["bibliograph-storage-meadow<br/>(BibliographStorageMeadow)"]
+		BSB[BibliographStorageBase]
+	end
+	subgraph Data Access
+		MS[Meadow - Source Entity]
+		MR[Meadow - Record Entity]
+		MD[Meadow - Delta Entity]
+	end
+	subgraph Database Backend
+		CONN["meadow-connection-*<br/>(SQLite, MySQL, PostgreSQL, MSSQL)"]
+		DB[(Database)]
+	end
+	APP --> BIB
+	BIB --> BSM
+	BSM --> BSB
+	BSM --> MS
+	BSM --> MR
+	BSM --> MD
+	MS --> CONN
+	MR --> CONN
+	MD --> CONN
+	CONN --> DB

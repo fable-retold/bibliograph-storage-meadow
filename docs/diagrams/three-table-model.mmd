@@ -1,0 +1,28 @@
+erDiagram
+	BibliographSource {
+		int IDBibliographSource PK
+		text GUIDBibliographSource
+		text SourceHash
+		text CreateDate
+		int Deleted
+	}
+	BibliographRecord {
+		int IDBibliographRecord PK
+		text GUIDBibliographRecord
+		text SourceHash FK
+		text RecordGUID
+		text RecordData
+		text MetadataJSON
+		int RecordTimestamp
+		int Deleted
+	}
+	BibliographDelta {
+		int IDBibliographDelta PK
+		text GUIDBibliographDelta
+		text SourceHash FK
+		text RecordGUID FK
+		text DeltaJSON
+		int Deleted
+	}
+	BibliographSource ||--o{ BibliographRecord : "SourceHash"
+	BibliographRecord ||--o| BibliographDelta : "SourceHash + RecordGUID"

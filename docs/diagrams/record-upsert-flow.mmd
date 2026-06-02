@@ -1,0 +1,7 @@
+flowchart TD
+	A["persistRecord(hash, guid, json, cb)"] --> B["_findRecord(hash, guid)"]
+	B --> C{Record exists?}
+	C -->|Yes| D["meadowRecord.doUpdate()<br/>Update RecordData"]
+	C -->|No| E["meadowRecord.doCreate()<br/>Create with RecordData + Timestamp"]
+	D --> F[callback]
+	E --> F

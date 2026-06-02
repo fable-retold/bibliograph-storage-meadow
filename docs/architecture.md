@@ -4,36 +4,8 @@
 
 The `bibliograph-storage-meadow` module sits between the Bibliograph record management framework and the database, using Meadow as the data access layer. This allows Bibliograph to store records in any Meadow-supported database without knowing database-specific details.
 
-```mermaid
-graph TB
-	subgraph Application
-		APP[Application Code]
-		BIB[Bibliograph]
-	end
-	subgraph Storage Layer
-		BSM["bibliograph-storage-meadow<br/>(BibliographStorageMeadow)"]
-		BSB[BibliographStorageBase]
-	end
-	subgraph Data Access
-		MS[Meadow - Source Entity]
-		MR[Meadow - Record Entity]
-		MD[Meadow - Delta Entity]
-	end
-	subgraph Database Backend
-		CONN["meadow-connection-*<br/>(SQLite, MySQL, PostgreSQL, MSSQL)"]
-		DB[(Database)]
-	end
-	APP --> BIB
-	BIB --> BSM
-	BSM --> BSB
-	BSM --> MS
-	BSM --> MR
-	BSM --> MD
-	MS --> CONN
-	MR --> CONN
-	MD --> CONN
-	CONN --> DB
-```
+<!-- bespoke diagram: edit diagrams/system-overview.mmd or .hints.json, then: npx pict-renderer-graph build modules/meadow/bibliograph-storage-meadow/docs -->
+![System Overview](diagrams/system-overview.svg)
 
 ## Class Hierarchy
 
@@ -70,97 +42,25 @@ classDiagram
 
 ## Initialization Flow
 
-```mermaid
-sequenceDiagram
-	participant App as Application
-	participant BSM as BibliographStorageMeadow
-	participant Meadow as Meadow
-	participant DB as Database
-
-	App->>BSM: initialize(callback)
-	BSM->>Meadow: new Meadow('BibliographSource')
-	BSM->>Meadow: new Meadow('BibliographRecord')
-	BSM->>Meadow: new Meadow('BibliographDelta')
-	Note over BSM: Set provider, schema, defaults
-
-	alt SQLite Provider
-		BSM->>DB: db.exec(CREATE TABLE BibliographSource)
-		BSM->>DB: db.exec(CREATE TABLE BibliographRecord)
-		BSM->>DB: db.exec(CREATE TABLE BibliographDelta)
-	else Other Provider
-		Note over BSM: Skip -- tables must already exist
-	end
-
-	BSM->>BSM: Initialized = true
-	BSM-->>App: callback()
-```
+<!-- bespoke diagram: edit diagrams/initialization-flow.mmd or .hints.json, then: npx pict-renderer-graph build modules/meadow/bibliograph-storage-meadow/docs -->
+![Initialization Flow](diagrams/initialization-flow.svg)
 
 ## Record Upsert Flow
 
 All persist operations follow the same upsert pattern:
 
-```mermaid
-flowchart TD
-	A["persistRecord(hash, guid, json, cb)"] --> B["_findRecord(hash, guid)"]
-	B --> C{Record exists?}
-	C -->|Yes| D["meadowRecord.doUpdate()<br/>Update RecordData"]
-	C -->|No| E["meadowRecord.doCreate()<br/>Create with RecordData + Timestamp"]
-	D --> F[callback]
-	E --> F
-```
+<!-- bespoke diagram: edit diagrams/record-upsert-flow.mmd or .hints.json, then: npx pict-renderer-graph build modules/meadow/bibliograph-storage-meadow/docs -->
+![Record Upsert Flow](diagrams/record-upsert-flow.svg)
 
 ## Data Flow: Read vs Write
 
-```mermaid
-flowchart LR
-	subgraph Write Path
-		W1[persistRecord] --> W2[JSON.stringify]
-		W2 --> W3[_findRecord]
-		W3 --> W4{exists?}
-		W4 -->|Yes| W5[doUpdate]
-		W4 -->|No| W6[doCreate]
-	end
-	subgraph Read Path
-		R1[read] --> R2[_findRecord]
-		R2 --> R3{row found?}
-		R3 -->|Yes| R4[JSON.parse RecordData]
-		R3 -->|No| R5[callback undefined]
-		R4 --> R6[callback parsed object]
-	end
-```
+<!-- bespoke diagram: edit diagrams/data-flow-read-vs-write.mmd or .hints.json, then: npx pict-renderer-graph build modules/meadow/bibliograph-storage-meadow/docs -->
+![Data Flow: Read vs Write](diagrams/data-flow-read-vs-write.svg)
 
 ## Three-Table Model
 
-```mermaid
-erDiagram
-	BibliographSource {
-		int IDBibliographSource PK
-		text GUIDBibliographSource
-		text SourceHash
-		text CreateDate
-		int Deleted
-	}
-	BibliographRecord {
-		int IDBibliographRecord PK
-		text GUIDBibliographRecord
-		text SourceHash FK
-		text RecordGUID
-		text RecordData
-		text MetadataJSON
-		int RecordTimestamp
-		int Deleted
-	}
-	BibliographDelta {
-		int IDBibliographDelta PK
-		text GUIDBibliographDelta
-		text SourceHash FK
-		text RecordGUID FK
-		text DeltaJSON
-		int Deleted
-	}
-	BibliographSource ||--o{ BibliographRecord : "SourceHash"
-	BibliographRecord ||--o| BibliographDelta : "SourceHash + RecordGUID"
-```
+<!-- bespoke diagram: edit diagrams/three-table-model.mmd or .hints.json, then: npx pict-renderer-graph build modules/meadow/bibliograph-storage-meadow/docs -->
+![Three-Table Model](diagrams/three-table-model.svg)
 
 ## Key Design Decisions
 

@@ -1,0 +1,15 @@
+flowchart LR
+	subgraph Write Path
+		W1[persistRecord] --> W2[JSON.stringify]
+		W2 --> W3[_findRecord]
+		W3 --> W4{exists?}
+		W4 -->|Yes| W5[doUpdate]
+		W4 -->|No| W6[doCreate]
+	end
+	subgraph Read Path
+		R1[read] --> R2[_findRecord]
+		R2 --> R3{row found?}
+		R3 -->|Yes| R4[JSON.parse RecordData]
+		R3 -->|No| R5[callback undefined]
+		R4 --> R6[callback parsed object]
+	end
